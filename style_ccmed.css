@@ -75,8 +75,7 @@ h3 {
 
 .botao-voltar {
     position: relative;
-    bottom: 20px;
-    left: 100px;
+    left: 70px;
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
@@ -84,7 +83,7 @@ h3 {
     background-color: #6a0faf;
     border: 2px solid #686868;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
 }
 
