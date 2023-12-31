@@ -15,7 +15,6 @@ h1 {
 }
 
 h2 {
-    font-family: 'Arial', sans-serif;
     font-size: 19px;
     color: rgb(255, 255, 255);
     margin-top: 16px;
@@ -79,7 +78,7 @@ h3 {
 
 .botao-voltar {
     position: relative;
-    bottom: 140px;
+    bottom: 100px;
     left: 100px;
     display: inline-block;
     padding: 10px 20px;
@@ -113,8 +112,7 @@ h4 {
             color: #8e20e2;
             margin-top: 18px;
             margin-bottom: 20px;
-            margin-left: 53px;
+            margin-left: 50px;
             margin-right: 10px;
-            line-height: 0.5;
             font-size: 18px;
         }
