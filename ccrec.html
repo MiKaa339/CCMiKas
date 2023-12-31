@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_ccrec.css">
+    <title>CCRec - CCMiKa's</title>
+
+</head>
+
+<body>
+
+    <h1>Oi :)</h1>
+    <div class='bemvindo'>
+        <h2>Seja bem-vindo(a) à CCRec:</h2>
+    </div>
+    <h2>
+        <p></p>
+        Aqui, nós quem calculamos quantos pontos você precisa!
+        <p></p>
+        Nos indique suas notas da prova mensal e de atividades
+        <p></p>
+        e calcularemos quantos pontos você precisa na prova bimestral
+        <p></p>
+        para não ficar de recuperação neste bimestre (média 6.0).
+
+    </h2>
+
+
+    <div class='calculadora'>
+        <h3><i>Coloque suas notas aqui:</i></h3>
+        <label for="provaMensal">Nota Prova Mensal:</label>
+        <input type="number" id="provaMensal" step="0.5" required><br>
+
+        <label for="atividades">Nota de Atividades:</label>
+        <input type="number" id="atividades" step="0.5" required><br>
+
+        <button onclick="calcularRecuperacao()">Calcular</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <a class="botao-voltar" href="#" onclick="voltarHomepage()">Voltar à Homepage</a>
+
+    <script>
+        function calcularRecuperacao() {
+            // Obter valores das entradas
+            var notaMensal = parseFloat(document.getElementById('provaMensal').value);
+            var notaAtividades = parseFloat(document.getElementById('atividades').value);
+
+            // Calcular nota mínima na Prova Bimestral
+            var notaBimestralMinima = (30 - ((notaMensal * 2) + notaAtividades)) / 2;
+
+            // Verificar se a nota ultrapassa 10
+            if (notaBimestralMinima > 10) {
+                var resultadoElemento = document.getElementById('resultado');
+                resultadoElemento.style.color = 'rgb(245, 245, 245)';
+                resultadoElemento.style.fontSize = '23px';
+                resultadoElemento.style.fontFamily = 'Verdana, sans-serif';
+                resultadoElemento.style.fontWeight = 'bold';
+                resultadoElemento.style.textAlign = 'center';
+
+                resultadoElemento.innerHTML = "<p class='mensagem'>Sentimos muito, mas a sua recuperação é iminente</p>";
+
+                var mensagemElemento = resultadoElemento.querySelector('.mensagem');
+                mensagemElemento.style.marginTop = '10px';
+                mensagemElemento.style.marginBottom = '10px';
+            }
+
+
+            else {
+                // Exibir o resultado na página
+                var resultadoElemento = document.getElementById('resultado');
+
+                resultadoElemento.style.color = 'rgb(245, 245, 245)';
+                resultadoElemento.style.fontSize = '30px';
+                resultadoElemento.style.fontFamily = 'Verdana, sans-serif';
+                resultadoElemento.style.fontWeight = 'bold';
+                resultadoElemento.style.textAlign = 'center';
+
+                // Estilizar a parte da nota usando uma span
+                resultadoElemento.innerHTML = "Nota mínima na Prova Bimestral: <span class='nota'>" + notaBimestralMinima.toFixed(1) + "</span>";
+
+                // Definir estilos para a span
+                var spanNota = resultadoElemento.querySelector('.nota');
+                spanNota.style.textDecoration = 'underline';
+                spanNota.style.textDecorationColor = 'rgb(142, 32, 226)';
+                spanNota.style.fontFamily = 'Verdana, sans-serif';
+                spanNota.style.fontWeight = 'bold';
+                spanNota.style.fontSize = '30px';
+            }
+        }
+
+        function voltarHomepage() {
+            window.location.href = "https://mikaa339.github.io/CCMikas/Templates/homepage.html";
+        }
+    </script>
