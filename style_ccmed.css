@@ -78,7 +78,7 @@ h3 {
 }
 
 .botao-voltar {
-    position: fixed;
+    position: relative;
     bottom: 140px;
     left: 100px;
     display: inline-block;
